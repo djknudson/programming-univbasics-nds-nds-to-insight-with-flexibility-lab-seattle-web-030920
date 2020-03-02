@@ -83,11 +83,13 @@ def movies_with_directors_set(source)
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
   result = []
+  i = 0
 
-  source.each do |director, index|
-    current_movies_collection = director[:movies]
-    current_movie = movies_with_director_key(director, current_movies_collection)
-    result[index] << current_movie
+  while i < source.size do
+    current_director = source[i][:name]
+    current_movies_collection = source[i][:movies]
+    current_movie = movies_with_director_key(current_director, current_movies_collection)
+    result[i] << current_movie
   end
   result
 end
