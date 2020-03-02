@@ -84,7 +84,8 @@ def movies_with_directors_set(source)
   # to have a :director_name key added to it.
   result = []
 
-  source.each do |dir_name|
+  source.each do |dir|
+    dir_name = dir[:name]
     movies_array = dir_name[:movies]
     movies_array.each do |curr_movie|
       current_movie = movie_with_director_name(dir_name, curr_movie)
