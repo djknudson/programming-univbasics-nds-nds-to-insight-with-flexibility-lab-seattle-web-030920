@@ -92,7 +92,7 @@ def movies_with_directors_set(source)
       result << current_movie
     end
   end
-  result    
+  result
 end
 
 # ----------------    End of Your Code Region --------------------
