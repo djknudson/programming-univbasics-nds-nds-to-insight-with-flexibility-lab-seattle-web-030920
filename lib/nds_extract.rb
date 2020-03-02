@@ -87,7 +87,7 @@ def movies_with_directors_set(source)
   source.each do |director|
     current_movies_collection = director[:movies]
     current_movie = movies_with_director_key(director, current_movies_collection)
-    result << current_movie
+    result[director] << current_movie
   end
   result
 end
