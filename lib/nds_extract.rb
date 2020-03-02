@@ -88,7 +88,8 @@ def movies_with_directors_set(source)
   while i < source.length do
     current_director = source[i][:name]
     current_movies_collection = source[i][:movies]
-    results[i] << movies_with_director_key(current_director, current_movies_collection)
+    current_array = movies_with_director_key(current_director, current_movies_collection)
+    result << current_array
   end
   result
 end
