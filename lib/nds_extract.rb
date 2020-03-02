@@ -84,17 +84,13 @@ def movies_with_directors_set(source)
   # to have a :director_name key added to it.
   result = []
 
-  source.each do |dir|
-    dir_name = dir[:name]
-    movies_array = dir_name[:movies]
-    movies_array.each do |curr_movie|
-      current_movie = movie_with_director_name(dir_name, curr_movie)
-      result << current_movie
-    end
+  source.each do |director|
+    current_movies_collection = director[:movies]
+    current_movie = movies_with_director_key(director, current_movies_collection)
+    result << current_movie
   end
   result
 end
-
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method
 # call code. You'll have to "see-saw" to get this to work!
